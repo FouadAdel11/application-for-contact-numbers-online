@@ -1,10 +1,10 @@
 
-MEAN Stack Contact Management Application
+MEAN Stack Contact Management Application:
   This project is a MEAN (MongoDB, Express.js, Angular, Node.js) stack application for managing contact numbers online. The application 
   allows users to add, edit, delete, and list contacts with server-side pagination and filters. It includes a login page with hard-coded 
   credentials and user management functionalities.
 ****************************************************************
-Features
+Features:
 1-Add New Contact
   Add a contact with Name, Phone, Address, and Notes.
 2-List Contacts
@@ -23,7 +23,7 @@ Features
   Real-time updates for contact edits, ensuring changes appear to other users without needing to refresh the    page.
 
   **********************************************************************
-  Installation
+  Installation:
     1-  Clone the repository:
       git clone https://github.com/FouadAdel11/application-for-contact-numbers-online
       cd application-for-contact-numbers-online
@@ -42,7 +42,7 @@ Features
     -Start the Angular development server:
       ng serve
 ********************************************************************
-Project Structure
+Project Structure:
   -Backend (Node.js/Express)
   -Server Initialization: server.js
   -API Routes: routes/contactRoutes.js, routes/userRoutes.js
@@ -61,7 +61,7 @@ Frontend (Angular)
 Modules:
   app/modules/material.module.ts: Angular Material imports for UI components
 ************************************************
-Usage
+Usage:
   1-Login:
     Access the login page and use the provided credentials to log in.
   2-Manage Contacts:
@@ -72,20 +72,20 @@ Usage
     Use the filters to quickly search for contacts.
     Navigate through pages to view different sets of contacts.
 **************************************************************
-Real-time Functionality
+Real-time Functionality:
   The application uses Socket.io to handle real-time updates for contact edits. When a user edits a contact, it is locked for other   
   users, and the changes are reflected in real-time.
   *******************************************************************
-Contribution
+Contribution:
   Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would 
   like to change.
 *********************************************************
-License
+License:
   This project is licensed under the MIT License.
 ****************************************************************
-GitHub Repository
+GitHub Repository:
   Link to GitHub Repository https://github.com/FouadAdel11/application-for-contact-numbers-online/edit/main/README.md
 ******************************************
-Contact
+Contact:
   For any queries or support, please contact me at fouad.attallaah@gmail.com.
  
