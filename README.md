@@ -1,6 +1,8 @@
 
 MEAN Stack Contact Management Application
-This project is a MEAN (MongoDB, Express.js, Angular, Node.js) stack application for managing contact numbers online. The application allows users to add, edit, delete, and list contacts with server-side pagination and filters. It includes a login page with hard-coded credentials and user management functionalities.
+  This project is a MEAN (MongoDB, Express.js, Angular, Node.js) stack application for managing contact numbers online. The application 
+  allows users to add, edit, delete, and list contacts with server-side pagination and filters. It includes a login page with hard-coded 
+  credentials and user management functionalities.
 ****************************************************************
 Features
 1-Add New Contact
