@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirmation Message </h1>
+<div mat-dialog-content>
+  <p>Do you want delete this Contact  Name : ({{userName}}) and his phone Number :( {{userNumber}})</p>
+</div>
+<div mat-dialog-actions>
+  <button type="submit" class="btn btn-danger create m-4" (click)="confirm()" >yes</button>
+  <button type="button"   mat-dialog-close  (click)="onNoClick()" class="btn btn-dark create" >Close</button>
+</div>

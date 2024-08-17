@@ -1,0 +1,45 @@
+<div class="topNav">
+    <div class="circle">
+        <span class="letters">F.A</span>
+    </div>
+</div>
+<div class="body">
+    <div class="header">
+        <input type="text" class="form-control search" [(ngModel)]="searchWord" (ngModelChange)="search()"  id="inputSearch" aria-describedby="searchBox" placeholder="Search ">
+        <button type="button" class="btn btn-primary create" (click)="openDialogCreate()">Create</button>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">address</th>
+              <th scope="col">notes</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let contact of filteredContacts">
+        <tr>
+            <td>{{contact.name}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.address}}</td>
+              <td>{{contact.notes}}</td>
+            <td><i class="material-icons" (click)="openModalEdit(contact)">create</i></td>
+            <td><i class="material-icons" (click)="openDialog(contact)">delete</i></td>
+        </tr>
+        </tbody>
+  </table>
+</div>
+
+
+<!-- paginnation sector -->
+<mat-paginator [length]="lengthOfData"
+              [pageSize]="limit"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+               (page)="onPageChange($event)"
+              aria-label="Select page">
+</mat-paginator>
+<!-- paginnation sector -->
+
+

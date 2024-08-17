@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content class=".bg-secondary">
+  <p>create contact</p>
+      <mat-form-field  class="me-4">
+    <mat-label>userName</mat-label>
+    <input matInput   [formControl]="name" >
+    <mat-error *ngIf="name.invalid">required</mat-error>
+      </mat-form-field>
+  <mat-form-field class="me-4">
+    <mat-label>phone</mat-label>
+    <input matInput  [formControl]="phone"  >
+        <mat-error *ngIf="phone.invalid">required</mat-error>
+      </mat-form-field>
+        <mat-form-field class="me-4">
+    <mat-label>address</mat-label>
+    <input matInput   [formControl]="address" >
+      </mat-form-field>
+        <mat-form-field class="me-4">
+    <mat-label >notes</mat-label>
+    <input matInput  [formControl]="notes"  >
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">close</button>
+  <button mat-button (click)="createContact()"  cdkFocusInitial>save</button>
+</div>
+

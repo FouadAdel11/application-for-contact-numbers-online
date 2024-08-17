@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content class=".bg-secondary">
+  <p>update Contact</p>
+      <mat-form-field  class="me-4">
+    <mat-label>userName</mat-label>
+    <input matInput   [formControl]="name"  [(ngModel)]="userName">
+    <mat-error *ngIf="name.invalid">required</mat-error>
+      </mat-form-field>
+  <mat-form-field class="me-4">
+    <mat-label>phone</mat-label>
+    <input matInput  [formControl]="phone"   [(ngModel)]="phoneNumber" >
+        <mat-error *ngIf="phone.invalid">required</mat-error>
+      </mat-form-field>
+        <mat-form-field class="me-4">
+    <mat-label>address</mat-label>
+    <input matInput   [formControl]="address"   [(ngModel)]="userAddress">
+      </mat-form-field>
+        <mat-form-field class="me-4">
+    <mat-label >notes</mat-label>
+    <input matInput  [formControl]="notes"  [(ngModel)]="userNotes" >
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">close</button>
+  <button mat-button (click)="updateContact()"  cdkFocusInitial>save</button>
+</div>
