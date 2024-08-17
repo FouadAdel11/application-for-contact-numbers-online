@@ -84,7 +84,7 @@ License:
   This project is licensed under the MIT License.
 ****************************************************************
 GitHub Repository:
-  Link to GitHub Repository https://github.com/FouadAdel11/application-for-contact-numbers-online/edit/main/README.md
+  Link to GitHub Repository https://github.com/FouadAdel11/application-for-contact-numbers-online
 ******************************************
 Contact:
   For any queries or support, please contact me at fouad.attallaah@gmail.com.
