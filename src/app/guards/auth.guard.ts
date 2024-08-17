@@ -6,13 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  token: any
   constructor(private router: Router) {
-    this.token= localStorage.getItem('token');
   }
   canActivate(): boolean {
-     this.token= localStorage.getItem('token');
-    if (this.token) {
+    const token = localStorage.getItem('token');
+    if (token) {
       return true
     } else {
       this.router.navigate(['/login']);

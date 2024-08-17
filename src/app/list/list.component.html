@@ -4,6 +4,7 @@
     </div>
 </div>
 <div class="body">
+          <label for="basic-url" class="form-label">search By name or number or address or  notes</label>
     <div class="header">
         <input type="text" class="form-control search" [(ngModel)]="searchWord" (ngModelChange)="search()"  id="inputSearch" aria-describedby="searchBox" placeholder="Search ">
         <button type="button" class="btn btn-primary create" (click)="openDialogCreate()">Create</button>

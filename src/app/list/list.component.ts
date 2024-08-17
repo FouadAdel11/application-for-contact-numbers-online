@@ -47,9 +47,7 @@ export class ListComponent {
         console.error('Error fetching data:', error);
       }
     );
-
   }
-
   search() {
     const searchTerm = this.searchWord.toLowerCase();
         this.filteredContacts = this.contactList.filter(contact =>
@@ -59,44 +57,35 @@ export class ListComponent {
            contact.notes.toLowerCase().includes(searchTerm)
     );
 }
-
   openModalEdit(contact:any){
     const dialogRef = this.dialog.open(EditContactComponent, { width: '500px' ,data:contact});
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        alert("update successfully done  ")
+        this.fetchData()
+      } else {
+        alert("edit not happen")
       }
-      this.fetchData()
     });
   }
-  deleteContact(data: any) {
-  this.apiService.deleteContact(data._id).subscribe(
-    response => {
-      console.log("response",response);
-      this.fetchData();
-    },
-    error => {
-      console.error('Error fetching data:', error);
-    }
-  );
 
- }
  openDialog(data: any): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, { width: '300px',data});
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        alert("delete successfully done  ")
+        this.fetchData()
+      } else {
+        alert("delete not happen")
       }
-      this.fetchData()
     });
  }
    openDialogCreate(): void {
     const dialogRef = this.dialog.open(CreateContactComponent, { width: '500px'});
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        alert("create successfully done  ")
+        this.fetchData()
+      } else {
+        alert("create not happen")
       }
-      this.fetchData()
     });
   }
 
