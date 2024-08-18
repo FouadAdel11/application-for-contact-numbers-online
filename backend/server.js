@@ -3,6 +3,8 @@ const connectDb = require("../backend/config/dbConnection");
 const errorHandler = require("../backend/middlewares/errorHandler");
 require("dotenv").config();
 const cors = require('cors');
+const socketController = require("./controllers/messageController");
+socketController.initializesocket();
 connectDb();
 const app = express();
 const port = 3000;
