@@ -7,6 +7,7 @@ import { Contact } from './interface/contact.interface';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { CreateContactComponent } from '../create-contact/create-contact.component';
 import { EditContactComponent } from '../edit-contact/edit-contact.component';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -26,7 +27,10 @@ export class ListComponent {
   constructor(private http: HttpClient,
     private apiService: ApiService,
     public dialog: MatDialog) { }
-  ngOnInit(){
+  currentUser:string=''
+  ngOnInit() {
+    this.currentUser = localStorage.getItem('userName') || ''
+    console.log(this.currentUser );
     this.fetchData();
   }
   onPageChange(event: PageEvent) {
@@ -57,14 +61,14 @@ export class ListComponent {
            contact.notes.toLowerCase().includes(searchTerm)
     );
 }
-  openModalEdit(contact:any){
+  openModalEdit(contact: any) {
+    contact.limit = this.limit
+    contact.offset=this.offset
     const dialogRef = this.dialog.open(EditContactComponent, { width: '500px' ,data:contact});
     dialogRef.afterClosed().subscribe(result => {
-      if (result !== undefined) {
-        this.fetchData()
-      } else {
-        alert("edit not happen")
-      }
+         this.contactList = result.contacts;
+        this.filteredContacts=this.contactList
+        this.lengthOfData= result.totalCount
     });
   }
 
@@ -73,8 +77,6 @@ export class ListComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         this.fetchData()
-      } else {
-        alert("delete not happen")
       }
     });
  }
@@ -83,8 +85,6 @@ export class ListComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
         this.fetchData()
-      } else {
-        alert("create not happen")
       }
     });
   }

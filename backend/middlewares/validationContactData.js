@@ -17,14 +17,10 @@ module.exports.updateContactValidator = [
   param("id").isMongoId().withMessage("Author id dosen't exist"),
   body("name")
     .isAlpha()
-    .withMessage(" name must be characters only")
-    .isLength({ min: 3, max: 10 })
-    .withMessage(" name must be less than 10 and more 3 chars"),
+    .withMessage(" name must be characters only"),
   body("phone")
     .isNumeric()
     .withMessage("phone must be number only")
-    .isLength({ min: 3, max: 10 })
-    .withMessage("phone must be less than 10 and more 3 chars")
 ];
 
 module.exports.deleteAuthorValidator = [

@@ -3,5 +3,8 @@ export interface Contact{
   name: string,
   phone: number,
   address: string,
-  notes:string
+  notes: string,
+  updateBy?: string,
+  limit?: number,
+  offset?:number
 }

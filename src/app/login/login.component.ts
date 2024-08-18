@@ -22,7 +22,7 @@ export class LoginComponent {
       response => {
         console.log("response",response);
         localStorage.setItem('token', response.accessToken);
-
+        localStorage.setItem('userName', form.username);
         this.router.navigateByUrl('/list')
       },
       error => {

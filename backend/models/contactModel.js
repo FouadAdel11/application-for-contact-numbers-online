@@ -16,6 +16,10 @@ const contactSchema = mongoose.Schema({
             notes:{
         type: String,
         required: [true, "Please add email"]
+  },
+                updateBy:{
+        type: String,
+        default:null
     },
 },{
     timestamps: true

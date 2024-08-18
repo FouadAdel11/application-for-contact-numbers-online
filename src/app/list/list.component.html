@@ -1,6 +1,6 @@
 <div class="topNav">
     <div class="circle">
-        <span class="letters">F.A</span>
+        <span class="letters">{{currentUser}}</span>
     </div>
 </div>
 <div class="body">
@@ -26,7 +26,7 @@
             <td>{{contact.phone}}</td>
             <td>{{contact.address}}</td>
               <td>{{contact.notes}}</td>
-            <td><i class="material-icons" (click)="openModalEdit(contact)">create</i></td>
+            <td><i class="material-icons"  *ngIf=" contact.updateBy==currentUser || !contact.updateBy  "(click)="openModalEdit(contact)">create</i></td>
             <td><i class="material-icons" (click)="openDialog(contact)">delete</i></td>
         </tr>
         </tbody>
